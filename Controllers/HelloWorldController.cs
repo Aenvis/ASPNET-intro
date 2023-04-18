@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Text.Encodings.Web;
 
 namespace HelloWorld.Controllers
 {
@@ -13,14 +15,10 @@ namespace HelloWorld.Controllers
 
         //
         // GET: /HelloWorld/Welcome/
-        public string Welcome()
+        // Requires using System.Text.Encodings.Web
+        public string Welcome(string name, int numTimes = 1)
         {
-            return "This is the Welcome action method...";
-        }
-
-        public string Greetings()
-        {
-            return "Hello Wojtek!";
+            return HtmlEncoder.Default.Encode($"Hello {name}! NumTimes is: {numTimes}");
         }
     }
 }
