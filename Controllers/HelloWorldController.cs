@@ -16,9 +16,9 @@ namespace HelloWorld.Controllers
         //
         // GET: /HelloWorld/Welcome/
         // Requires using System.Text.Encodings.Web
-        public string Welcome(string name, int numTimes = 1)
+        public string Welcome(string name, int id = 1)
         {
-            return HtmlEncoder.Default.Encode($"Hello {name}! NumTimes is: {numTimes}");
+            return HtmlEncoder.Default.Encode($"Hello {name}! ID: {id}");
         }
     }
 }
